@@ -29,7 +29,7 @@ main {
 .product-image {
   display: block;
   margin: 0 auto 20px;
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   border-radius: 8px;
 }

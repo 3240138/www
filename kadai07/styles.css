@@ -42,8 +42,6 @@ nav ul {
 
   gap: 1em;
 
-  flex-wrap: wrap;
-
 }
 
 nav a {
@@ -66,31 +64,6 @@ section {
 
 }
 
-
-
-
-.service {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 1em;
-
-  margin-bottom: 1.5em;
-
-}
-
-.service img {
-
-  width: 80px;
-
-  height: 80px;
-
-  object-fit: contain;
-
-}
-
 form label {
 
   display: block;
@@ -106,10 +79,6 @@ input, textarea {
   padding: 0.5em;
 
   margin-top: 0.2em;
-
-  border: 1px solid #ccc;
-
-  border-radius: 4px;
 
 }
 
@@ -127,8 +96,6 @@ button {
 
   cursor: pointer;
 
-  border-radius: 4px;
-
 }
 
 footer {
@@ -140,6 +107,7 @@ footer {
   padding: 1em;
 
 }
+ 
 
 @media screen and (max-width: 768px) {
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>座席の予約</title>
+    <style>
+    body {
+      font-family: "メイリオ", sans-serif;
+    }
+    h1 {
+      color: black;
+    }
+    .status {
+      color: red;
+      font-weight: bold;
+    }
+    .thanks {
+      color: navy;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h1>座席の予約</h1>
+    <p>東京会場<span id="status" class="status">（予約受付中）</span></p>
+    <button id="reserveBtn" onclick="reserve()">予約する</button>
+
+    <script>
+        function reserve(){
+            document.getElementById("status").textContent="(予約済み)";
+            document.getElementById("reserveBtn").style.display="none";
+            const message = document.createElement("p");
+            message.textContent = "ありがとうございました。";
+            message.className = "thanks";
+            document.body.appendChild(message);
+        }
+    </script>
+</body>
+</html>

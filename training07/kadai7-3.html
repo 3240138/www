@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>繰り返し処理</title>
+<style>
+  body {
+    font-family: "Yu Gothic", sans-serif;
+    margin: 30px;
+  }
+  h1 {
+    color: #222;
+  }
+  table {
+    border-collapse: collapse;
+    width: 500px;
+  }
+  th, td {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  th {
+    background-color: #7fc6c6;
+  }
+</style>
+</head>
+<body>
+<h1>入場料の一覧</h1>
+<table id="priceTable">
+  <tr>
+    <th></th>
+    <th>大人</th>
+    <th>高校生</th>
+    <th>中学生</th>
+    <th>小学生</th>
+  </tr>
+</table>
+
+<script>
+  const table = document.getElementById("priceTable");
+
+  // 各料金（1人分）
+  const adult = 800;
+  const high = 680;
+  const junior = 450;
+  const child = 380;
+
+  // 1人～5人までの料金を繰り返しで作成
+  for (let i = 1; i <= 5; i++) {
+    let row = `
+      <tr>
+        <th>${i}人</th>
+        <td>${adult * i}円</td>
+        <td>${high * i}円</td>
+        <td>${junior * i}円</td>
+        <td>${child * i}円</td>
+      </tr>
+    `;
+    table.insertAdjacentHTML("beforeend", row);
+  }
+</script>
+</body>
+</html>

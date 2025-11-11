@@ -16,12 +16,12 @@
     width: 500px;
   }
   th, td {
-    border: 1px solid #333;
+    border: 1px solid #000000;
     padding: 8px 12px;
     text-align: center;
   }
   th {
-    background-color: #7fc6c6;
+    background-color: #99CCCC;
   }
 </style>
 </head>
@@ -40,13 +40,11 @@
 <script>
   const table = document.getElementById("priceTable");
 
-  // 各料金（1人分）
   const adult = 800;
   const high = 680;
   const junior = 450;
   const child = 380;
 
-  // 1人～5人までの料金を繰り返しで作成
   for (let i = 1; i <= 5; i++) {
     let row = `
       <tr>

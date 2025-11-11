@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繰り返し処理</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            border: solid 1px #000000;
+            width: 40px;
+            padding: 5px;
+            text-align: center;
+        }
+        th{
+            background-color: #99CCCC;
+        }
+    </style>
+</head>
+<body>
+    <h1>入場料の一覧</h1>
+    <table id="priceTable">
+        <tr>
+            <th></th>
+            <th>大人</th>
+            <th>高校生</th>
+            <th>中学生</th>
+            <th>小学生</th>
+        </tr>
+    </table>
+
+    <script>
+        const table =document.getElementById("priceTable");
+        const adult=800;
+        const high=680;
+        const junior=450;
+        const child=380;
+
+        for(let i=1; i<=5;i++){
+            let row=`
+            <tr>
+                <th>${i}人</th>
+                <td>${adult*i}円</td>
+                <td>${high*i}円</td>
+                <td>${junior*i}円</td>
+                <td>${child*i}円</td>
+            </tr>
+            `;
+            table.insertAdjacentHTML("beforeend",row);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐</title>
+    <style>
+  body{
+    font-family: "Meiryo", sans-serif;
+    padding: 20px;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+
+  .eq{
+    font-size: 40px;
+    margin: 20px 0;
+  }
+
+  button{
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  #result{
+    font-size: 40px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+
+<body>
+    <h3>問題</h3>
+    <p>次に方程式を満たす解を求めなさい。解は2つあります。</p>
+
+    <div class="eq">x<sup>2</sup>-6x+8＝0</div>
+
+    <button onclick="answer(1)">x=1</button>
+    <button onclick="answer(2)">x=2</button>
+    <button onclick="answer(3)">x=3</button>
+    <button onclick="answer(4)">x=4</button>
+    <button onclick="answer(5)">x=5</button>
+
+    <script>
+        let x = 0;
+
+    function answer(num){
+      x = num;
+     check();
+    }
+
+    function check(){
+    const result = document.getElementById("result");
+
+     if(x === 2){
+      result.textContent = "正解！";
+    }else if(x === 4){
+     result.textContent = "正解！";
+    }else{
+     result.textContent = "間違い！";
+    }
+}
+    </script>
+</body>
+</html>

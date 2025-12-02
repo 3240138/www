@@ -7,7 +7,7 @@
 <title>breakの活用</title>
 <style>
     .big_font{
-        font-size: 28px;
+        font-size: 14px;
     }
 </style>
 </head>
@@ -22,31 +22,29 @@
 <div id="message" class="big_font"></div>
 
 <script>
-// <<< ここに関数 show() を作成 >>>
+
 function show(){
 
-    let anser = [];   // 見つかった解を保存する配列
-    let count = 0;    // 解の個数を数える変数
+    let anser = []; 
+    let count = 0;  
 
-    // x を 1 から順に増やしていく
+
     for(let x = 1; x <= 200; x++){
 
-        // 三次方程式の値を計算
+       
         let y = x**3 - 53*x**2 + 620*x - 1036;
 
-        // 0になったら「解」
+      
         if(y === 0){
-            anser.push(x); // 解を配列に保存
-            count++;       // 個数をカウント
-
-            // 3個見つかればループ強制終了
+            anser.push(x); 
+            count++;     
+       
             if(count === 3){
                 break;
             }
         }
     }
 
-    // 結果を画面に表示
     document.getElementById("message").innerHTML =
         `${anser[0]}、 ${anser[1]}、 ${anser[2]} が解です。`;
 }

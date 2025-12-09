@@ -17,7 +17,7 @@
     <h1>1~10で割り切れる数字</h1>
 
     <p>1、2、3、4、5、6、7、8、9、10で<br>割り切れる最小の数値をJavaScriptで求めます。</p>
-    <button onclick="show()">結果を見る</button>
+    <button onclick="calcBtn">結果を見る</button>
     <div id="message">ここに結果が表示されます。</div>
 
     <script>
@@ -44,7 +44,7 @@
             return acc;
         }
 
-        document.getElementById('show()').addEventListener('click', function () {
+        document.getElementById('calcBtn').addEventListener('click', function () {
             const result = lcmRange(1, 10);
             const box = document.getElementById('resultBox');
             box.textContent = `答えは${result}です。`;

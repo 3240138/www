@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ヒロアカクイズ</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+   <header>
+       <h1>ヒロアカクイズ</h1>
+   </header>
+
+   <main>
+      <section id="quiz">
+           <h2 id="question"></h2>
+           <div id="choices"></div>
+           <p id="result"></p>
+           <button id="next">次の問題</button>
+           <button id="restart">もう一度挑戦</button>
+      </section>
+   </main>
+
+   <script>
+       const questions = [
+           {
+           question: "爆豪勝己の個性は？",
+           choices: ["爆破", "硬化", "電気", "浮遊"],
+           answer: 0
+           },
+           {
+           question: "轟焦凍の個性は？",
+           choices: ["炎", "氷", "半冷半燃", "影"],
+           answer: 2
+           },
+           {
+           question: "相澤先生のヒーロー名は？",
+           choices: ["エンデヴァー", "イレイザーヘッド", "プレゼント・マイク", "オールマイト"],
+           answer: 1
+           },
+           {
+           question: "雄英高校の学科は？",
+           choices: ["ヒーロー科", "戦闘科", "防衛科", "能力科"],
+           answer: 0
+           }
+       ];
+
+    let current = 0;
+    let score = 0;
+
+    const question = document.querySelector("#question");
+    const choices = document.querySelector("#choices");
+    const result = document.querySelector("#result");
+    const next = document.querySelector("#next");
+    const restart = document.querySelector("#restart");
+
+    function showQuestion() {
+        question.textContent = questions[current].question;
+        choices.innerHTML = "";
+
+        questions[current].choices.forEach((choice, index) => {
+           const btn = document.createElement("button");
+           btn.textContent = choice;
+           btn.addEventListener("click", () => checkAnswer(index));
+           choices.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(index) {
+       if (index === questions[current].answer) {
+           result.textContent = "正解！";
+           score++;
+        } else {
+              result.textContent = "不正解…";
+            }
+    }
+
+    next.addEventListener("click", () => {
+        current++;
+        result.textContent = "";
+
+        if (current < questions.length) {
+            showQuestion();
+        } else {
+           question.textContent = `結果：${score} / ${questions.length} 問正解`;
+           choices.innerHTML = "";
+
+           if (score >= 4) {
+                result.textContent = "あなたはヒロアカマスター！";
+            } else {
+               result.textContent = "もっとヒロアカを見直そう！";
+            }
+        }
+    });
+
+    restart.addEventListener("click", () => {
+       current = 0;
+       score = 0;
+       result.textContent = "";
+       showQuestion();
+    });
+
+    showQuestion();
+
+   </script>
+</body>
+</html>
+
 </body>
 </html>

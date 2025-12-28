@@ -22,26 +22,31 @@
 
    <script>
        const questions = [
-           {
+        {
+           question: "緑谷出久が受け継いだ個性は？",
+           choices: ["爆破", "ワン・フォー・オール", "半冷半燃", "無個性"],
+           answer: 1
+        },
+        {
            question: "爆豪勝己の個性は？",
            choices: ["爆破", "硬化", "電気", "浮遊"],
            answer: 0
-           },
-           {
+        },
+        {
            question: "轟焦凍の個性は？",
            choices: ["炎", "氷", "半冷半燃", "影"],
            answer: 2
-           },
-           {
+        },
+        {
            question: "相澤先生のヒーロー名は？",
            choices: ["エンデヴァー", "イレイザーヘッド", "プレゼント・マイク", "オールマイト"],
            answer: 1
-           },
-           {
+        },
+        {
            question: "雄英高校の学科は？",
            choices: ["ヒーロー科", "戦闘科", "防衛科", "能力科"],
            answer: 0
-           }
+        }
        ];
 
     let current = 0;
@@ -69,7 +74,8 @@
        if (index === questions[current].answer) {
            result.textContent = "正解！";
            score++;
-        } else {
+        } 
+        else {
               result.textContent = "不正解…";
             }
     }
@@ -80,13 +86,15 @@
 
         if (current < questions.length) {
             showQuestion();
-        } else {
+        } 
+        else {
            question.textContent = `結果：${score} / ${questions.length} 問正解`;
            choices.innerHTML = "";
 
            if (score >= 4) {
                 result.textContent = "あなたはヒロアカマスター！";
-            } else {
+            } 
+            else {
                result.textContent = "もっとヒロアカを見直そう！";
             }
         }
